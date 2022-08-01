@@ -2,7 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.comics-search-bar {
+.comics-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background-color: rgba(237, 34, 36, 0.95);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  img {
+    width: 100px;
+  }
+  .search-input {
+    height: 3rem;
+    width: 36vw;
+    border-radius: 5px;
+    border: 0px solid;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.comics-results {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-top: 25vh;
+  .comic-card {
+    width: 200px;
+    height: 350px;
+    margin: 0.8rem 1rem;
+    background-size: auto;
+    position: relative;
+    cursor: pointer;
+    .comic-like-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+    &:hover {
+      .comic-like-btn {
+        display: block;
+      }
+      .comic-card-text-box {
+        display: block;
+      }
+    }
+
+    .comic-card-text-box {
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 16%;
+      font-weight: 400;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      display: none;
+    }
+  }
+  #heart-on {
+    transform: translateY(6px);
+  }
 }
